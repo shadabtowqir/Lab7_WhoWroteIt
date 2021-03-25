@@ -36,11 +36,12 @@ public class BookLoader extends AsyncTaskLoader<String> {
     protected void onStartLoading() {
         super.onStartLoading();
 
+        forceLoad();
     }
 
     @Nullable
     @Override
     public String loadInBackground() {
-        return "";
+        return NetworkUtils.getBookInfo(mQueryString);
     }
 }
